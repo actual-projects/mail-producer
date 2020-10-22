@@ -29,7 +29,7 @@
         <github.miemiedev.version>1.2.17</github.miemiedev.version>
         <common.codec.version>1.10</common.codec.version>
         <servlet-api.version>3.1.0</servlet-api.version>
-        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
