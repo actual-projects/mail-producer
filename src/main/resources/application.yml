@@ -32,13 +32,17 @@ spring:
         max-wait: -1
         max-active: 1000
     timeout: 6000
+#   cluster:
+#     max-redirects: 1000
+#     nodes:
+#       - 127.0.0.1
 
 # mail
 #  mail:
 #    default-encoding: UTF-8
 #    host:
 #    port:
-#    usename:
+#    username:
 #    password:
 #    properties:
 #      mail:
@@ -68,6 +72,26 @@ druid:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall,log4j
+    useGlobalDataSourceStat: true
+  slave:
+    url: jdbc:mysql://localhost:3306/mail?useUnicode=true&characterEncoding=utf-8&autoReconnect=tru&zeroDateTimeBehavior=convertToNull
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    initialSize: 5
+    minIdle: 1
+    maxIdle: 10
+    maxActive: 100
+    maxWaite: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIde: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filter: stat,wall,log4j
     useGlobalDataSourceStat: true
 # mybatis
 mybatis:
