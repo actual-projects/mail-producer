@@ -16,7 +16,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>1.11</java.version>
+        <mysql.version>8.0.18</mysql.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <commons-lang3.version>3.7</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -24,7 +25,7 @@
         <fastjson.version>1.2.31</fastjson.version>
         <mybatis.version>3.4.5</mybatis.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
-        <druid.version>1.0.31</druid.version>
+        <druid.version>1.1.22</druid.version>
         <fasterxml.uuid.version>3.1.4</fasterxml.uuid.version>
         <github.miemiedev.version>1.2.17</github.miemiedev.version>
         <common.codec.version>1.10</common.codec.version>
@@ -32,6 +33,7 @@
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
         <log4j.version>1.2.17</log4j.version>
+        <mybatis.generator.version>1.3.7</mybatis.generator.version>
     </properties>
 
     <dependencies>
@@ -143,6 +145,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -206,13 +209,38 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${mybatis.generator.version}</version>
+                <dependencies>
+                    <!-- 解决无法连接MySql数据库引擎异常 -->
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                    <!-- 解决Cannot instantiate object of type tk.mybatis.mapper.generator.MapperPlugin异常 -->
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>4.1.5</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
+
             <!--解决maven update project后版本降低为1.5的问题-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.11</source>
+                    <target>1.11</target>
                 </configuration>
             </plugin>
             <!--单元测试-->
