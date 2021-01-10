@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * 注解 - 配置写数据源为主数据库
  *
  * @author Chova
- * @date 2020-12-27
+ * @date 2020/12/27
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

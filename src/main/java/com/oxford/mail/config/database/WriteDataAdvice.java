@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 使用AOP配置注解功能 - 切换数据源为主数据源用于写操作
  *
  * @author Chova
- * @date 2020-12-28
+ * @date 2020/12/28
  */
 @Component
 @Aspect

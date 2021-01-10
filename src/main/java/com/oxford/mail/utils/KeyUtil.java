@@ -8,7 +8,7 @@ import com.fasterxml.uuid.impl.TimeBasedGenerator;
  * 生成键值的工具类
  *
  * @author Chova
- * @date 2020-02-27
+ * @date 2020/02/27
  */
 public class KeyUtil {
 

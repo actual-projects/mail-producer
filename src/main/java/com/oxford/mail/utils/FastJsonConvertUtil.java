@@ -11,7 +11,7 @@ import java.util.List;
  * Json转换工具类
  *
  * @author Chova
- * @date 2020-02-27
+ * @date 2020/02/27
  */
 public class FastJsonConvertUtil {
     public static final SerializerFeature[] FEATURESWITHNULLVALUE = {SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNullBooleanAsFalse, SerializerFeature.WriteNullListAsEmpty, SerializerFeature.WriteNullNumberAsZero, SerializerFeature.WriteNullStringAsEmpty};

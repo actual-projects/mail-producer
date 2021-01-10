@@ -1,10 +1,10 @@
 package com.oxford.mail.constant;
 
 /**
- * @ClassName : Const
- * @Description : 配置通用的静态常量
- * @Author : Chova
- * @Date : Created 2020-02-26
+ * 配置通用的静态常量
+ *
+ * @author Chova
+ * @date 2020-02-26
  */
 public class Const {
 

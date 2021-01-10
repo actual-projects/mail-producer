@@ -22,7 +22,7 @@ import java.util.List;
  * MyBatis配置 - 使用MyBatis的SqlSessionFactory管理数据源
  *
  * @author Chova
- * @date 2020-11-02
+ * @date 2020/11/02
  */
 @Configuration
 @AutoConfigureAfter({DataSourceConfiguration.class})

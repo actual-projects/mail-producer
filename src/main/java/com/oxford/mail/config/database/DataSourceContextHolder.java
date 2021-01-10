@@ -6,7 +6,7 @@ import org.springframework.util.Assert;
  * 读写分离主从数据源类型设置类
  *
  * @author Chova
- * @date 2020-11-02
+ * @date 2020/11/02
  */
 public class DataSourceContextHolder {
 

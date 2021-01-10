@@ -21,7 +21,7 @@ import java.sql.SQLException;
  * 数据源配置
  *
  * @author Chova
- * @date 2020-06-02
+ * @date 2020/06/02
  */
 @Configuration
 @EnableTransactionManagement
